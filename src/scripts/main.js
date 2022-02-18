@@ -1,22 +1,17 @@
 import { createPlan } from './plan.js';
-import { plantSeeds } from './tractor.js';
 import { addPlant } from './fields.js';
 import { usePlants } from './fields.js';
-
-
+import { plantSeeds } from './tractor.js';
+import { harvestPlants } from './harvester.js';
 
 const yearlyPlan = createPlan()
-
-console.log("Welcome to the main module")
-
-console.log(yearlyPlan)
-
-
+addPlant(yearlyPlan)
+const usedPlants = usePlants() 
+const plantedSeeds = plantSeeds(usedPlants)
+const harvestedPlants = harvestPlants(plantedSeeds)
 
 
-let plantedSeeds = []
+console.log(harvestedPlants)
 
 
-plantedSeeds = plantSeeds(yearlyPlan)
 
-console.log(plantedSeeds)
