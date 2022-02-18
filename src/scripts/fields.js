@@ -1,10 +1,17 @@
 let allPlants = []
 
 export const addPlant = (seedObj) => {
-    allPlants.push(seedObj)
+    if (Array.isArray(seedObj)){
+        for (const seed of seedObj){
+            allPlants.push(seed)
+        }
+    }
+    else {
+        allPlants.push(seedObj)
+    }
 }
 
-export usePlants = () => {
+export const usePlants = () => {
     return allPlants
 }
 
